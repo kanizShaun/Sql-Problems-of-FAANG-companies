@@ -1,0 +1,3 @@
+#Given a list of a company's employees, find the name of the manager from the largest department. 
+#Output their first and last name. 
+select h.first_name, h.last_name from (select first_name, last_name,department_name from az_employees where position = 'Manager')h left join (select department_name,count(department_id) as department_id from az_employees group by department_name)l on h.department_name = l.department_name

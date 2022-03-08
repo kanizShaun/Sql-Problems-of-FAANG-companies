@@ -1,0 +1,5 @@
+#Find the 3-month rolling average of total revenue from 
+#purchases given a table with users, their purchase amount, 
+#and date purchased. Do not include returns which are represented by negative purchase values. Output the year-month (YYYY-MM) and 3-month rolling average of revenue, 
+#sorted from earliest month to latest month. 
+select s.date, avg(s.rolling_total) as A_3_month_rolling_average  from (select to_char(a.created_at,'YYYY-MM') as date, sum(a.purchase_amt) AS rolling_total from (select * from amazon_purchases order by created_at desc)a, (select * from amazon_purchases order by created_at desc)b where a.created_at >= b.created_at - interval '2 month' and a.purchase_amt  not in (select purchase_amt from amazon_purchases where purchase_amt < 0) group by date order by date asc)s group by s.date

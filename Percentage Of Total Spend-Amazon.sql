@@ -1,0 +1,5 @@
+#Calculate the percentage of the total spend a customer spent on each order. Output the customer’s first name, order details, and percentage of the order cost to their total spend across all orders. 
+#Assume each customer has a unique first name (i.e., there is only 1 customer named Karen in the dataset) and that customers place at most only 1 order a day.
+#Percentages should be represented as fractions 
+select c.first_name, c.order_details , (c.total_order_cost / d.total_order*100) as  percentage_of_the_total_spend from (select b.*, a.order_date, a.order_details, a.total_order_cost from orders a left join customers b on a.cust_id = b.id)c, 
+(select b.first_name, sum(a.total_order_cost) as total_order from orders a left join customers b on a.cust_id = b.id group by b.first_name)d group by c.first_name, c.order_details, c.total_order_cost, d.total_order 
