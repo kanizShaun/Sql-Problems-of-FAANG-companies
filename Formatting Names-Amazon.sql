@@ -1,0 +1,1 @@
+select ltrim(first_name) from worker;

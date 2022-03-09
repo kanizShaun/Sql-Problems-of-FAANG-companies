@@ -1,0 +1,1 @@
+select * from worker where salary > 100000 and salary < 500000

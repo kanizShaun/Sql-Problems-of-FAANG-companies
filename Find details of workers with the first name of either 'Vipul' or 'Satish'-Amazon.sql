@@ -1,0 +1,1 @@
+select * from worker where first_name in ('Vipul', 'Satish')

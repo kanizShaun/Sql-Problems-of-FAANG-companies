@@ -1,0 +1,1 @@
+select department, sum(salary) as total_salary from worker group by department

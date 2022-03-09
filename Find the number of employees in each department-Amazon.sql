@@ -1,0 +1,1 @@
+select department, count(worker_id) from worker group by department

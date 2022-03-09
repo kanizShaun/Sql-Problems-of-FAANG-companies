@@ -1,0 +1,1 @@
+select a.* from (select department, count(worker_id) as number_of_workers from worker  group by department)a where a.number_of_workers < 5

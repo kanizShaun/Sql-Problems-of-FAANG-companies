@@ -1,0 +1,1 @@
+select * from worker where worker_id in (select max(worker_id) from worker)

@@ -1,0 +1,1 @@
+select distinct salary from worker order by salary asc limit 3

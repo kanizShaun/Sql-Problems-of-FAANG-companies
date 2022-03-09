@@ -1,0 +1,1 @@
+select a.* from (select distinct salary from worker order by salary desc limit 3)a  order by a.salary asc

@@ -1,0 +1,1 @@
+select a.first_name from (select *,  right(first_name, 1) as d, char_length(first_name) as length from worker)a where a.d = 'h' and a.length = 6

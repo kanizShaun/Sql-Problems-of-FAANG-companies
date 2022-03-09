@@ -1,0 +1,1 @@
+select * from worker where first_name not in ('Vipul', 'Satish')

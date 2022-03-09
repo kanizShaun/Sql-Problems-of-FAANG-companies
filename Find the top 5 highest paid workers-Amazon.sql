@@ -1,0 +1,1 @@
+select * from worker order by salary asc limit 5

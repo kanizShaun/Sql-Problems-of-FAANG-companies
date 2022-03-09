@@ -1,0 +1,1 @@
+select a.* from (select *, to_char(joining_date, 'YYYY-MM') as joining_month from worker)a where a.joining_month  = '2014-02' 
